@@ -24,6 +24,12 @@ from baseclass import TestCompareRPMs, TestCompareKoji
 #############
 
 # File in /bin owned by 'root' is OK in RPMs
+class ValidFileOwnedByRootRPMs(TestRPMs):
+    def setUp(self):
+        TestRPMs.setUp(self)
+        self.inspection = 'ownership'
+        self.label = 'ownership'
+        self.result = 'OK'
 
 # File in /sbin owned by 'root' is OK in RPMs
 
